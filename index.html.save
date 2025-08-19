@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Homepage - CSE 135</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; }
+    header { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+    /* main（left-side) + side (right-side) */
+    body {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 16px;
+      align-items: start;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    /* Team-Card */
+    .team-card {
+      background: #f5f5f5;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+    .team-card h3 { margin: 0 0 8px; }
+    .team-card small { color: #555; display: block; margin-bottom: 8px; }
+    /* fits to the screen */
+    @media (max-width: 768px) {
+      body {
+        grid-template-columns: 1fr;
+      }
+    }
+    .section-title { background: #eee; padding: 8px; border-radius: 6px; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>CSE 135</h1>
+    <h2>Summer 2025</h2>
+  </header>
+
+  <aside class="team-card" aria-label="Team Info">
+    <h3>Team 123</h3>
+    <strong><i>Team Members</i></strong>
+    <ul>
+      <li><a href="/members/nicole/">Nicole Liu</a></li>
+      <li><a href="/members/yanhua/">Yanhua Shi</a></li>
+      <li><a href="#">One more position left</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <h2 class="section-title">Homework 1</h2>
+    <ul>
+      <li><a href="https://cse134bweek5.netlify.app/designed404page">PHP</a></li>
+      <li><a href="https://cse134bweek5.netlify.app/designed404page">Node</a></li>
+      <li><a href="https://cse134bweek5.netlify.app/designed404page">Analytics</a></li>
+    </ul>
+
+    <h2 class="section-title">Homework 2</h2>
+    <p>TBD</p>
+
+    <h2 class="section-title">Analytics App</h2>
+    <p>TBD</p>
+
+    <footer>A simple page for CSE 135 ss2</footer>
+  </main>
+</body>
+</html>
+

@@ -1,0 +1,4 @@
+
+# Matomo & GeoIP
+matomo/
+*.mmdb

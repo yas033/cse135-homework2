@@ -1,0 +1,15 @@
+{
+  "name": "cse135.online",
+  "version": "1.0.0",
+  "description": "## Part 2 ： Deploy from Github 1) create a new pair of ssh key 2) add the new public key to Droplet and the private key to Github Secrets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "logrocket": "^10.1.0"
+  }
+}
