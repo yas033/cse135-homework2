@@ -10,7 +10,7 @@ if session["username"]
 else
   puts "<p><b>Name:</b> Not set</p>"
 end
-puts '<a href="/cgi-bin/page1.rb">Page 1</a><br>'
-puts '<a href="/cgi-bin/destroy.rb">Destroy</a>'
+puts '<a href="/cgi-bin/page1rb-session1.rb">Page 1</a><br>'
+puts '<a href="/cgi-bin/rb-destroy-session.rb">Destroy</a>'
 puts "</body></html>"
 session.close

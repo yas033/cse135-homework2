@@ -1,29 +1,22 @@
 #!/usr/bin/python3
-import cgi, http.cookies, os
+import os, http.cookies
 
-print("Cache-Control: no-cache")
-form = cgi.FieldStorage()
-cookie = http.cookies.SimpleCookie(os.environ.get("HTTP_COOKIE"))
-
-name = form.getvalue("username")
-if name:
-    with open("/tmp/py_session.txt", "w") as f:
-        f.write(name)
-    cookie["username"] = name
+cookies = http.cookies.SimpleCookie(os.environ.get("HTTP_COOKIE", ""))
+name = cookies["session_name"].value if "session_name" in cookies else ""
 
 print("Content-type: text/html")
-print(cookie.output())
 print()
 
-print("<html><body>")
-print("<h1>Python Session Page 1</h1>")
-if name:
-    print("<p><b>Name:</b> {}</p>".format(name))
-else:
-    print("<p><b>Name:</b> Not set</p>")
-print('<a href="/cgi-bin/page2.py">Session Page 2</a><br>')
-print('<form method="POST" action="/cgi-bin/page1.py">')
-print('<input type="text" name="username">')
-print('<input type="submit" value="Set Name">')
+print("<!DOCTYPE html>")
+print("<html>")
+print("<head><title>Python Sessions Page 2</title></head>")
+print("<body>")
+print("<h1>Python Sessions Page 2</h1>")
+print(f"<p>Name: {name}</p>")
+print('<p><a href="/cgi-bin/py-sessions-1.py">Session Page 1</a></p>')
+print('<p><a href="/py-cgiform.html">Python CGI Form</a></p>')
+print('<form method="POST" action="/cgi-bin/py-destroy-session.py">')
+print('  <input type="submit" value="Destroy Session">')
 print('</form>')
-print("</body></html>")
+print("</body>")
+print("</html>")

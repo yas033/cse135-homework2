@@ -14,7 +14,7 @@ if session["username"]
 else
   puts "<p><b>Name:</b> Not set</p>"
 end
-puts '<a href="/cgi-bin/page2.rb">Page 2</a><br>'
+puts '<a href="/cgi-bin/rb-session2.rb">Page 2</a><br>'
 puts '<form method="POST"><input type="text" name="username">'
 puts '<input type="submit" value="Set Name"></form>'
 puts "</body></html>"

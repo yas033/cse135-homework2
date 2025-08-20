@@ -6,5 +6,5 @@ session = CGI::Session.new(cgi, "tmpdir"=>"/tmp")
 session.delete
 puts cgi.header
 puts "<html><body><h1>Ruby Session Destroyed</h1>"
-puts '<a href="/cgi-bin/page1.rb">Back to Page 1</a>'
+puts '<a href="/rb-cgiform.html">Back to Session Test</a>'
 puts "</body></html>"

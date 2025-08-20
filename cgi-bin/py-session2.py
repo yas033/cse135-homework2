@@ -1,20 +1,20 @@
-#!/usr/bin/python3
-import os
+#!/usr/bin/env python3
+import os, http.cookies
 
-print("Cache-Control: no-cache")
+cookies = http.cookies.SimpleCookie(os.environ.get("HTTP_COOKIE", ""))
+name = cookies["session_name"].value if "session_name" in cookies else ""
+
 print("Content-type: text/html\n")
-
-name = None
-if os.path.exists("/tmp/py_session.txt"):
-    with open("/tmp/py_session.txt") as f:
-        name = f.read().strip()
-
-print("<html><body>")
-print("<h1>Python Session Page 2</h1>")
-if name:
-    print("<p><b>Name:</b> {}</p>".format(name))
-else:
-    print("<p><b>Name:</b> Not set</p>")
-print('<a href="/cgi-bin/page1.py">Back to Page 1</a><br>')
-print('<a href="/cgi-bin/destroy.py">Destroy Session</a><br>')
-print("</body></html>")
+print(f"""<!DOCTYPE html>
+<html>
+<head><title>Python Sessions Page 2</title></head>
+<body>
+<h1>Python Sessions Page 2</h1>
+<p>Name: {name}</p>
+<p><a href="/cgi-bin/py-sessions-1.py">Session Page 1</a></p>
+<p><a href="/py-cgiform.html">Python CGI Form</a></p>
+<form method="POST" action="/cgi-bin/py-destroy-session.py">
+  <input type="submit" value="Destroy Session">
+</form>
+</body>
+</html>""")

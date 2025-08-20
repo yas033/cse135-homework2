@@ -6,7 +6,7 @@ use CGI::Cookie;
 
 my $cgi = CGI->new;
 
-# 清除 cookie
+
 my $cookie = CGI::Cookie->new(
     -name    => 'session_name',
     -value   => '',
