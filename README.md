@@ -14,9 +14,6 @@ https://cse135.online/cgi.html
 
 
 
-# any additional notes for the graders
-
-
 ## 3. Team member names
 Nicole Liu , Yanhua Shi
 
