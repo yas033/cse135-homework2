@@ -21,13 +21,13 @@ jobs:
       - name: "Setup SSH"
         run: |
           mkdir -p ~/.ssh
-          printf "%s" '${{ secrets.DEPLOY_KEY }}' > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
+          printf "%s" '${{ secrets.DEPLOY_KEY }}' > ~/.ssh/git_repo
+          chmod 600 ~/.ssh/git_repo
           {
             echo "Host droplet"
             echo "  HostName ${{ secrets.HOST }}"
             echo "  User ${{ secrets.USER }}"
-            echo "  IdentityFile ~/.ssh/id_ed25519"
+            echo "  IdentityFile ~/.ssh/git_repo"
             echo "  StrictHostKeyChecking no"
           } >> ~/.ssh/config
 
